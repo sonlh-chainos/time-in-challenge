@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 35px 50px 0 0;
+  gap: 30px;
+  font-weight: 500;
+  .nav-item {
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    color: #ffffff;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  .active-nav {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}

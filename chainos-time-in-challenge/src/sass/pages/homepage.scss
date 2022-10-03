@@ -1,0 +1,17 @@
+.home-page {
+  max-width: 1500px;
+  color: white;
+  margin: auto;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 200px;
+    .wrapper-left {
+      text-transform: uppercase;
+      .header {
+        font-weight: 700;
+        font-size: 32px;
+      }
+    }
+  }
+}

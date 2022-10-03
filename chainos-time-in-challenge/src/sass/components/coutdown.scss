@@ -1,0 +1,36 @@
+.coutdown {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+.custom-coutdown {
+  display: flex;
+  gap: 50px;
+  .box-time {
+    position: relative;
+    display: inline;
+    box-sizing: border-box;
+    width: 80px;
+    height: 104px;
+
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    opacity: 0.5;
+    border: 0.5px solid #ffffff;
+    border-radius: 5px;
+    .time-item {
+      font-size: 64px;
+      display: flex;
+      justify-content: center;
+    }
+    .name-time {
+      position: absolute;
+      bottom: -50px;
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+  }
+}
