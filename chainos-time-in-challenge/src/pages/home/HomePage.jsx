@@ -37,27 +37,27 @@ const HomePage = () => {
             ?.filter((user, index) => index < 3)
             ?.map((user, index) => (
               <div className="user-top">
-                {index === 1 ? (
-                  <div className="medal">
-                    <div>2</div>
-                    <div className="wrapper-user-top">
-                      <div className="w-120 image-avatar">
-                        <img
-                          src={user.image}
-                          alt="avatar"
-                          className="custom-avt border-silver"
-                        />
+                <div className="medal">
+                  <div>{index === 0 ? 1 : index === 1 ? 2 : 3}</div>
+                  <div className="wrapper-user-top">
+                    <div
+                      className={`image-avatar ${
+                        index === 0 ? 'w-165' : 'w-120'
+                      }`}
+                    >
+                      <img
+                        src={user.image}
+                        alt="avatar"
+                        className="custom-avt border-silver"
+                      />
 
-                        <div className="image-medal right-5">
-                          <img src={medal_silver} alt="medal" />
-                        </div>
+                      <div className="image-medal right-5">
+                        <img src={medal_silver} alt="medal" />
                       </div>
                     </div>
-                    <div className="name-user">John Robert</div>
                   </div>
-                ) : (
-                  ''
-                )}
+                  <div className="name-user">John Robert</div>
+                </div>
               </div>
             ))}
           {/* <div className="user-top">
@@ -111,38 +111,42 @@ const HomePage = () => {
             </div>
           </div> */}
           <div className="table-statistical">
-            {listInTime?.map((user, index) => (
-              <div className="wrapper-statistical" key={index}>
-                <div className="rank">
-                  <div className="current-rank">{index + 1}</div>
-                  <div className="status-rank">
-                    <div className="arrow">
-                      {user.change > 0 ? (
-                        <img src={icon_arrow_up} alt="arrow up" />
-                      ) : user.change === 0 ? (
-                        <img src={icon_cross} alt="icon cross" />
-                      ) : (
-                        <img src={icon_arrow_down} alt="arrow up" />
-                      )}
+            <div className="table-statistical">
+              {listInTime
+                ?.filter((i, index) => index < 5)
+                ?.map((user, index) => (
+                  <div className="wrapper-statistical" key={index}>
+                    <div className="rank">
+                      <div className="current-rank">{index + 1}</div>
+                      <div className="status-rank">
+                        <div className="arrow">
+                          {user.change > 0 ? (
+                            <img src={icon_arrow_up} alt="arrow up" />
+                          ) : user.change === 0 ? (
+                            <img src={icon_cross} alt="icon cross" />
+                          ) : (
+                            <img src={icon_arrow_down} alt="arrow up" />
+                          )}
+                        </div>
+                        <div className="status-number-rank">
+                          {user.change === 0 ? '' : user.change}
+                        </div>
+                      </div>
                     </div>
-                    <div className="status-number-rank">
-                      {user.change === 0 ? '' : user.change}
+                    <div className="avt-top">
+                      <div className="avatar">
+                        {user.staff_id === 'CH0096' ? (
+                          <img src={nghiem} alt="avatar" />
+                        ) : (
+                          <img src={user.image} alt="avatar" />
+                        )}
+                      </div>
+                      <div className="username">{user.staff}</div>
                     </div>
+                    <div className="count-number">{user.count}</div>
                   </div>
-                </div>
-                <div className="avt-top">
-                  <div className="avatar">
-                    {user.staff_id === 'CH0096' ? (
-                      <img src={nghiem} alt="avatar" />
-                    ) : (
-                      <img src={user.image} alt="avatar" />
-                    )}
-                  </div>
-                  <div className="username">{user.staff}</div>
-                </div>
-                <div className="count-number">{user.count}</div>
-              </div>
-            ))}
+                ))}
+            </div>
           </div>
         </div>
         <div className="wrapper-left">
@@ -199,7 +203,7 @@ const HomePage = () => {
           </div>
           <div className="table-statistical">
             {listLate
-              ?.filter((i, index) => index < 6)
+              ?.filter((i, index) => index < 5)
               ?.map((user, index) => (
                 <div className="wrapper-statistical" key={index}>
                   <div className="rank">
