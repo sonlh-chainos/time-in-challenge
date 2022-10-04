@@ -2,5 +2,29 @@
     background-image: url(../../assets/img/home_background.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 1200px;
+}
+* {
+    box-sizing: border-box;
+}
+.w-165 {
+    width: 165px;
+}
+.w-120 {
+    width: 120px;
+}
+.right-25 {
+    right: 25px;
+}
+.right-5 {
+    right: 5px;
+}
+.border-silver {
+    border: 5px solid #F0EFEF;
+}
+.border-gold {
+    border: 5px solid #FFC700;
+}
+.border-bronze {
+    border: 5px solid #8A5A14;
 }

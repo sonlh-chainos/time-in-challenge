@@ -1,3 +1,4 @@
+@import '../helpers/global.scss';
 .home-page {
   max-width: 1500px;
   color: white;
@@ -5,12 +6,102 @@
   .wrapper {
     display: flex;
     justify-content: space-between;
-    padding-top: 200px;
+    padding: 100px 40px;
     .wrapper-left {
       text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
       .header {
         font-weight: 700;
         font-size: 32px;
+      }
+      .user-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        .medal {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          .wrapper-user-top {
+            .image-avatar {
+              position: relative;
+              .custom-avt {
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+            .image-medal {
+              position: absolute;
+              width: 95px;
+              bottom: -30px;
+              img {
+                width: 100%;
+              }
+            }
+          }
+          .name-user {
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+      }
+      .table-statistical {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 20px;
+        .wrapper-statistical {
+          padding: 0 16px;
+          gap: 12px;
+          width: 400px;
+          height: 60px;
+          background: #ffffff;
+          border: 1px solid #e9edf4;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          color: #000000;
+          font-size: 14px;
+          font-weight: 500;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .rank {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            .status-rank {
+              display: flex;
+              justify-content: space-between;
+              gap: 5px;
+              align-items: center;
+              .arrow {
+                width: 22px;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .avt-top {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            align-items: center;
+            width: 250px;
+            .avatar {
+              width: 36px;
+              height: 36px;
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
       }
     }
   }
