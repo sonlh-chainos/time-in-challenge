@@ -8,7 +8,6 @@
     justify-content: space-between;
     padding: 100px 40px;
     .wrapper-left {
-      text-transform: uppercase;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -20,38 +19,73 @@
       .user-top {
         display: flex;
         justify-content: space-between;
-        gap: 40px;
+        width: 550px;
         .medal {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 20px;
+          font-weight: 700;
+          font-size: 16px;
+          flex: 0 1 30%;
+          text-align: center;
+          .rank-number {
+            font-size: 20px;
+          }
           .wrapper-user-top {
             .image-avatar {
               position: relative;
+              width: 120px;
+              height: 120px;
               .custom-avt {
                 width: 100%;
                 border-radius: 50%;
+                height: 100%;
               }
             }
             .image-medal {
               position: absolute;
               width: 95px;
               bottom: -30px;
+              right: 8px;
               img {
                 width: 100%;
               }
             }
           }
-          .name-user {
-            font-size: 16px;
-            font-weight: 700;
+
+          &:nth-child(1) {
+          flex: 0 1 40%;
+            order: 1;
+            .wrapper-user-top {
+              .image-avatar {
+                height: 165px;
+                width: 165px;
+                .custom-avt {
+                  border: 5px solid #ffc700;
+                }
+              }
+              .image-medal {
+                right: 32px;
+              }
+            }
+          }
+          &:nth-child(2) {
+            .custom-avt {
+              border: 5px solid #f0efef;
+            }
+          }
+          &:nth-child(3) {
+            order: 2;
+            .custom-avt {
+              border: 5px solid #8a5a14;
+            }
           }
         }
       }
       .table-statistical {
         display: grid;
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 1fr);
         gap: 20px;
         .wrapper-statistical {
           padding: 0 16px;

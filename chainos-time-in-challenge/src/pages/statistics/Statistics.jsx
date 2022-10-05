@@ -5,7 +5,7 @@ import medal_gold from '../../assets/img/medal_gold.png';
 import medal_bronze from '../../assets/img/medal_bronze.png';
 import icon_arrow_up from '../../assets/img/icon_arrow_up.png';
 import icon_arrow_down from '../../assets/img/icon_arrow_down.png';
-import nghiem from '../../assets/img/nghiem.jpg';
+import nghiem from '../../assets/img/nghiem.png';
 const Statistics = () => {
   return (
     <div className='home-page'>

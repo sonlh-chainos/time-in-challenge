@@ -5,7 +5,7 @@
 }
 .custom-coutdown {
   display: flex;
-  gap: 50px;
+  gap: 100px;
   .box-time {
     position: relative;
     display: inline;
@@ -31,6 +31,9 @@
       bottom: -50px;
       font-size: 32px;
       text-transform: uppercase;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
