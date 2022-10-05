@@ -10,6 +10,16 @@ import icon_cross from '../../assets/img/icon_cross.png';
 import nghiem from '../../assets/img/nghiem.png';
 import ReactTooltip from 'react-tooltip';
 
+const test = (user) => {
+  switch (user.staff_id) {
+    case 'CH0096':
+      return nghiem;
+      
+    default:
+      return user.image;
+  }
+};
+
 const HomePage = () => {
   const [listInTime, setListInTime] = useState();
   const [listLate, setListLate] = useState();
@@ -32,7 +42,7 @@ const HomePage = () => {
         setListLate(new_list_late);
       });
   }, []);
-  console.log(listInTime, 'listInTime'); 
+  console.log(listInTime, 'listInTime');
   return (
     <div className="home-page">
       <Coutdown />
@@ -47,15 +57,11 @@ const HomePage = () => {
                   <div className="rank-number">{index + 1}</div>
                   <div className="wrapper-user-top">
                     <div className={'image-avatar'}>
-                      {user.staff_id === 'CH0096' ? (
-                        <img src={nghiem} alt="avatar" className="custom-avt" />
-                      ) : (
-                        <img
-                          src={user.image}
-                          alt="avatar"
-                          className="custom-avt"
-                        />
-                      )}
+                      <img
+                        src={test(user)}
+                        alt="avatar"
+                        className="custom-avt"
+                      />
 
                       <div className="image-medal">
                         {index === 1 ? (
