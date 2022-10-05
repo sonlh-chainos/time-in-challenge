@@ -14,7 +14,7 @@ const test = (user) => {
   switch (user.staff_id) {
     case 'CH0096':
       return nghiem;
-      
+
     default:
       return user.image;
   }
@@ -111,11 +111,12 @@ const HomePage = () => {
                   </div>
                   <div className="avt-top">
                     <div className="avatar">
-                      {user.staff_id === 'CH0096' ? (
+                      {/* {user.staff_id === 'CH0096' ? (
                         <img src={nghiem} alt="avatar" />
                       ) : (
                         <img src={user.image} alt="avatar" />
-                      )}
+                      )} */}
+                      <img src={test(user)} alt="avatar" />
                     </div>
                     <div className="username">{user.staff}</div>
                   </div>

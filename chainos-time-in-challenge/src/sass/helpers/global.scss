@@ -1,11 +1,14 @@
 .background-main {
-    min-height: 100vh;
-    background-image: url(../../assets/img/home_background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    
+  min-height: 100vh;
+  background-image: url(../../assets/img/home_background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.on-hide {
+  display: none;
 }

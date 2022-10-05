@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Digital Numbers';
+  src: url('../../assets/font/digital-7/digital-7\ \(mono\).ttf')
+    format('opentype');
+  font-weight: normal;
+}
 .coutdown {
   color: #ffffff;
   display: flex;
@@ -25,6 +31,7 @@
       font-size: 64px;
       display: flex;
       justify-content: center;
+      font-family: 'Digital Numbers', sans-serif;
     }
     .name-time {
       position: absolute;
