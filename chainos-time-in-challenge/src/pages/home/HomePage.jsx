@@ -19,6 +19,7 @@ const test = (user) => {
       return user.image;
   }
 };
+const listTableDefault = (index) => {};
 
 const HomePage = () => {
   const [listInTime, setListInTime] = useState();
@@ -111,11 +112,6 @@ const HomePage = () => {
                   </div>
                   <div className="avt-top">
                     <div className="avatar">
-                      {/* {user.staff_id === 'CH0096' ? (
-                        <img src={nghiem} alt="avatar" />
-                      ) : (
-                        <img src={user.image} alt="avatar" />
-                      )} */}
                       <img src={test(user)} alt="avatar" />
                     </div>
                     <div className="username">{user.staff}</div>
@@ -123,6 +119,24 @@ const HomePage = () => {
                   <div className="count-number">{user.count}</div>
                 </div>
               ))}
+            {Array.from({ length: 5 - (listInTime?.length || 5) }).map(
+              (i, index) => (
+                <div className="wrapper-statistical">
+                  <div className="rank">
+                    <div className="current-rank">--</div>
+                    <div className="status-rank">
+                      <div className="arrow"></div>
+                      <div className="status-number-rank">--</div>
+                    </div>
+                  </div>
+                  <div className="avt-top">
+                    <div className="avatar"></div>
+                    <div className="username">--</div>
+                  </div>
+                  <div className="count-number">--</div>
+                </div>
+              )
+            )}
           </div>
         </div>
         <div className="wrapper-left">
@@ -154,6 +168,24 @@ const HomePage = () => {
                   <div className="name-user">{user.staff}</div>
                 </div>
               ))}
+               {Array.from({ length: 5 - (listLate?.length || 5) }).map(
+              (i, index) => (
+                <div className="wrapper-statistical">
+                  <div className="rank">
+                    <div className="current-rank">--</div>
+                    <div className="status-rank">
+                      <div className="arrow"></div>
+                      <div className="status-number-rank">--</div>
+                    </div>
+                  </div>
+                  <div className="avt-top">
+                    <div className="avatar"></div>
+                    <div className="username">--</div>
+                  </div>
+                  <div className="count-number">--</div>
+                </div>
+              )
+            )}
           </div>
           <div className="table-statistical">
             {listLate
