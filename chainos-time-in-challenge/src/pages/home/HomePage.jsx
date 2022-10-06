@@ -19,7 +19,6 @@ const test = (user) => {
       return user.image;
   }
 };
-const listTableDefault = (index) => {};
 
 const HomePage = () => {
   const [listInTime, setListInTime] = useState();
@@ -168,7 +167,7 @@ const HomePage = () => {
                   <div className="name-user">{user.staff}</div>
                 </div>
               ))}
-               {Array.from({ length: 5 - (listLate?.length || 5) }).map(
+            {Array.from({ length: 5 - (listLate?.length ?? 5) }).map(
               (i, index) => (
                 <div className="wrapper-statistical">
                   <div className="rank">
