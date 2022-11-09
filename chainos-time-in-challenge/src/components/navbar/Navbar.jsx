@@ -12,7 +12,7 @@ const Navbar = () => {
         Ranking
       </NavLink>
       <NavLink
-        to={'/'}
+        to={'/statistics'}
         className={`nav-item ${
           location.pathname === '/statistics' ? 'active-nav' : ''
         }`}
