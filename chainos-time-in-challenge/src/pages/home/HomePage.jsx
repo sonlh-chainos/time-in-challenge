@@ -79,33 +79,34 @@ const HomePage = () => {
                   <div className="name-user">{user.staff}</div>
                 </div>
               ))}
-            {Array.from({ length: 3 - (listInTime?.filter((i, index) => index < 3).length || 3) }).map(
-              (user, index) => (
-                <div className="medal" key={index}>
-                  <div className="rank-number">{index + 1}</div>
-                  <div className="wrapper-user-top">
-                    <div className={'image-avatar'}>
-                      <img
-                        src={unknown_person}
-                        alt="unknown person"
-                        className="custom-avt"
-                      />
+            {Array.from({
+              length:
+                3 - (listInTime?.filter((i, index) => index < 3).length || 3),
+            }).map((user, index) => (
+              <div className="medal" key={index}>
+                <div className="rank-number">{index + 1}</div>
+                <div className="wrapper-user-top">
+                  <div className={'image-avatar'}>
+                    <img
+                      src={unknown_person}
+                      alt="unknown person"
+                      className="custom-avt"
+                    />
 
-                      <div className="image-medal">
-                        {index === 1 ? (
-                          <img src={medal_silver} alt="medal silver" />
-                        ) : index === 0 ? (
-                          <img src={medal_gold} alt="medal gold" />
-                        ) : (
-                          <img src={medal_bronze} alt="medal bronze" />
-                        )}
-                      </div>
+                    <div className="image-medal">
+                      {index === 1 ? (
+                        <img src={medal_silver} alt="medal silver" />
+                      ) : index === 0 ? (
+                        <img src={medal_gold} alt="medal gold" />
+                      ) : (
+                        <img src={medal_bronze} alt="medal bronze" />
+                      )}
                     </div>
                   </div>
-                  <div className="name-user">Unknown Person</div>
                 </div>
-              )
-            )}
+                <div className="name-user">Unknown Person</div>
+              </div>
+            ))}
           </div>
 
           <div className="table-statistical">
@@ -150,7 +151,7 @@ const HomePage = () => {
                       return (
                         <div>
                           {user.checkin_list.map((item, i) => (
-                            <div key={i}>{`${
+                            <div style={item.best === 1 ? { color: 'green', fontWeight: 'bold' } : {}} key={i}>{`${
                               item.checkin + ' | ' + item.count
                             } `}</div>
                           ))}
@@ -270,9 +271,10 @@ const HomePage = () => {
                       return (
                         <div>
                           {user.checkin_list.map((item, i) => (
-                            <div key={i}>{`${
-                              item.checkin + ' | ' + item.count
-                            }`}</div>
+                            <div
+                              style={item.best === 1 ? { color: 'red', fontWeight: 'bold' } : {}}
+                              key={i}
+                            >{`${item.checkin + ' | ' + item.count}`}</div>
                           ))}
                         </div>
                       );

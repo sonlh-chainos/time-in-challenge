@@ -20,7 +20,6 @@ const Coutdown = () => {
         <span className="custom-coutdown">
           <div className="box-time">
             <div className="time-item">{`${days > 9 ? days : '0' + days}`}</div>
-
             <div className="name-time">Days</div>
           </div>
           <div className="box-time">
