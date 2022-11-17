@@ -7,12 +7,15 @@ import icon_arrow_up from '../../assets/img/icon_arrow_up.png';
 import icon_arrow_down from '../../assets/img/icon_arrow_down.png';
 import icon_cross from '../../assets/img/icon_cross.png';
 import nghiem from '../../assets/img/nghiem.png';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import dayjs from 'dayjs';
 import ReactTooltip from 'react-tooltip';
 import { TextField } from '@mui/material';
-// import DatePicker from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import unknown_person from '../../assets/img/unknown_person.png';
+
 const test = (user) => {
   switch (user.staff_id) {
     case 'CH0096':
@@ -58,24 +61,22 @@ const Statistics = () => {
   return (
     <div className="home-page">
       <div className="time-month">
-        <DatePicker
-          selected={currentDate}
-          onChange={(date) => setCurrentDate(date)}
-          dateFormat="MM/yyyy"
-          showMonthYearPicker
-          showFullMonthYearPicker
-        />
-        {/* <DatePicker
-          views={['year', 'month']}
-          label="Year and Month"
-          // minDate={dayjs('2012-03-01')}
-          // maxDate={dayjs('2023-06-01')}
-          value={currentDate}
-          onChange={(date) => {
-            setCurrentDate(date);
-          }}
-          renderInput={(params) => <TextField {...params} helperText={null} />}
-        /> */}
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            views={['year', 'month']}
+            // label="Year and Month"
+            // minDate={dayjs('2012-03-01')}
+            // maxDate={dayjs('2023-06-01')}
+            value={currentDate}
+            onChange={(date) => {
+              setCurrentDate(date);
+            }}
+            renderInput={(params) => (
+              <TextField {...params} helperText={null} />
+            )}
+            className="custom-datepicker"
+          />
+        </LocalizationProvider>
       </div>
       <div className="wrapper">
         <div className="wrapper-left">
@@ -108,9 +109,9 @@ const Statistics = () => {
                   <div className="name-user">{user.staff}</div>
                 </div>
               ))}
-            {/* {Array.from({
+            {Array.from({
               length:
-                3 - (listInTime?.filter((i, index) => index < 3).length || 3),
+                3 - (listInTime?.length ?? 3),
             }).map((user, index) => (
               <div className="medal" key={index}>
                 <div className="rank-number">{index + 1}</div>
@@ -135,7 +136,7 @@ const Statistics = () => {
                 </div>
                 <div className="name-user">Unknown Person</div>
               </div>
-            ))} */}
+            ))}
           </div>
 
           <div className="table-statistical">
@@ -244,6 +245,34 @@ const Statistics = () => {
                   <div className="name-user">{user.staff}</div>
                 </div>
               ))}
+            {Array.from({
+              length:
+                3 - (listLate?.length ?? 3),
+            }).map((user, index) => (
+              <div className="medal" key={index}>
+                <div className="rank-number">{index + 1}</div>
+                <div className="wrapper-user-top">
+                  <div className={'image-avatar'}>
+                    <img
+                      src={unknown_person}
+                      alt="unknown person"
+                      className="custom-avt"
+                    />
+
+                    <div className="image-medal">
+                      {index === 1 ? (
+                        <img src={medal_silver} alt="medal silver" />
+                      ) : index === 0 ? (
+                        <img src={medal_gold} alt="medal gold" />
+                      ) : (
+                        <img src={medal_bronze} alt="medal bronze" />
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="name-user">Unknown Person</div>
+              </div>
+            ))}
           </div>
           <div className="table-statistical">
             {listLate
