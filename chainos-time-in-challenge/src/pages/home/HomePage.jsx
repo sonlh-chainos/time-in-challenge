@@ -9,7 +9,9 @@ import icon_arrow_down from '../../assets/img/icon_arrow_down.png';
 import icon_cross from '../../assets/img/icon_cross.png';
 import nghiem from '../../assets/img/nghiem.png';
 import unknown_person from '../../assets/img/unknown_person.png';
+import versus from '../../assets/img/versus.png';
 import ReactTooltip from 'react-tooltip';
+import useScreenSize from 'components/common/useSCreenSize';
 
 const test = (user) => {
   switch (user.staff_id) {
@@ -24,7 +26,7 @@ const test = (user) => {
 const HomePage = () => {
   const [listInTime, setListInTime] = useState();
   const [listLate, setListLate] = useState();
-
+  const screenSize = useScreenSize();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -151,9 +153,14 @@ const HomePage = () => {
                       return (
                         <div>
                           {user.checkin_list.map((item, i) => (
-                            <div style={item.best === 1 ? { color: 'green', fontWeight: 'bold' } : {}} key={i}>{`${
-                              item.checkin + ' | ' + item.count
-                            } `}</div>
+                            <div
+                              style={
+                                item.best === 1
+                                  ? { color: 'green', fontWeight: 'bold' }
+                                  : {}
+                              }
+                              key={i}
+                            >{`${item.checkin + ' | ' + item.count} `}</div>
                           ))}
                         </div>
                       );
@@ -180,6 +187,9 @@ const HomePage = () => {
               )
             )}
           </div>
+        </div>
+        <div className={`image-versus ${screenSize > 1349 ? 'on-hide' : ''}`}>
+          <img src={versus} alt="Against" />
         </div>
         <div className="wrapper-left">
           <div className="header">Top late</div>
@@ -272,7 +282,11 @@ const HomePage = () => {
                         <div>
                           {user.checkin_list.map((item, i) => (
                             <div
-                              style={item.best === 1 ? { color: 'red', fontWeight: 'bold' } : {}}
+                              style={
+                                item.best === 1
+                                  ? { color: 'red', fontWeight: 'bold' }
+                                  : {}
+                              }
                               key={i}
                             >{`${item.checkin + ' | ' + item.count}`}</div>
                           ))}

@@ -65,8 +65,8 @@ const Statistics = () => {
           <DatePicker
             views={['year', 'month']}
             // label="Year and Month"
-            // minDate={dayjs('2012-03-01')}
-            // maxDate={dayjs('2023-06-01')}
+            minDate={dayjs('2022-01-01')}
+            maxDate={dayjs(new Date())}
             value={currentDate}
             onChange={(date) => {
               setCurrentDate(date);
@@ -114,7 +114,7 @@ const Statistics = () => {
                 3 - (listInTime?.length ?? 3),
             }).map((user, index) => (
               <div className="medal" key={index}>
-                <div className="rank-number">{index + 1}</div>
+                <div className="rank-number">{index + 1 + listInTime.length}</div>
                 <div className="wrapper-user-top">
                   <div className={'image-avatar'}>
                     <img
@@ -250,7 +250,7 @@ const Statistics = () => {
                 3 - (listLate?.length ?? 3),
             }).map((user, index) => (
               <div className="medal" key={index}>
-                <div className="rank-number">{index + 1}</div>
+                <div className="rank-number">{index + 1 + listLate.length}</div>
                 <div className="wrapper-user-top">
                   <div className={'image-avatar'}>
                     <img
