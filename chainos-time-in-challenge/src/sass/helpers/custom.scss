@@ -1,5 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 .custom-datepicker {
   .MuiInputBase-colorPrimary {
     background: #ffffff;
+    border-radius: 8px;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Poppins', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
   }
+}
+.css-1yllih9-MuiPaper-root-MuiPickersPopper-paper {
+  border-radius: 8px;
+}
+.MuiPickersCalendarHeader-label {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Poppins', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  font-weight: 500 !important;
+}
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  font-weight: 500 !important;
+}
+.PrivatePickersYear-yearButton {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Poppins', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+}
+.css-3eghsz-PrivatePickersYear-button {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Poppins', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif !important;
+}
+.css-1sy1a1q-MuiTypography-root-PrivatePickersMonth-root {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Poppins', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif !important;
+}
+.css-15fehp8-MuiTypography-root-PrivatePickersMonth-root.Mui-selected {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Poppins', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
 }
