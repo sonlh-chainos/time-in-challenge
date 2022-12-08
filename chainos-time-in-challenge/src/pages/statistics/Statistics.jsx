@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import avatar from '../../assets/img/avatar.jpg';
 import medal_silver from '../../assets/img/medal_silver.png';
 import medal_gold from '../../assets/img/medal_gold.png';
 import medal_bronze from '../../assets/img/medal_bronze.png';
@@ -11,9 +10,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import dayjs from 'dayjs';
 import ReactTooltip from 'react-tooltip';
 import { TextField } from '@mui/material';
-import { LocalizationProvider } from '@mui/x-date-pickers';
+import { LocalizationProvider, MobileDatePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import unknown_person from '../../assets/img/unknown_person.png';
 
 const test = (user) => {
@@ -62,18 +60,15 @@ const Statistics = () => {
     <div className="home-page">
       <div className="time-month">
         <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker
-            views={['year', 'month']}
-            // label="Year and Month"
+          <MobileDatePicker
+            value={currentDate}
             minDate={dayjs('2022-01-01')}
             maxDate={dayjs(new Date())}
-            value={currentDate}
+            views={['year', 'month']}
             onChange={(date) => {
               setCurrentDate(date);
             }}
-            renderInput={(params) => (
-              <TextField {...params} helperText={null} />
-            )}
+            renderInput={(params) => <TextField {...params} />}
             className="custom-datepicker"
           />
         </LocalizationProvider>
@@ -81,7 +76,7 @@ const Statistics = () => {
       <div className="wrapper">
         <div className="wrapper-left">
           <div className="header">Top in time</div>
-          <div className="user-top">
+          {/* <div className="user-top">
             {listInTime
               ?.filter((i, index) => index < 3)
               ?.map((user, index) => (
@@ -110,11 +105,12 @@ const Statistics = () => {
                 </div>
               ))}
             {Array.from({
-              length:
-                3 - (listInTime?.length ?? 3),
+              length: 3 - (listInTime?.length ?? 3),
             }).map((user, index) => (
               <div className="medal" key={index}>
-                <div className="rank-number">{index + 1 + listInTime.length}</div>
+                <div className="rank-number">
+                  {index + 1 + listInTime.length}
+                </div>
                 <div className="wrapper-user-top">
                   <div className={'image-avatar'}>
                     <img
@@ -137,7 +133,7 @@ const Statistics = () => {
                 <div className="name-user">Unknown Person</div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="table-statistical">
             {listInTime
@@ -218,7 +214,7 @@ const Statistics = () => {
         </div>
         <div className="wrapper-left">
           <div className="header">Top late</div>
-          <div className="user-top">
+          {/* <div className="user-top">
             {listLate
               ?.filter((i, index) => index < 3)
               ?.map((user, index) => (
@@ -227,7 +223,7 @@ const Statistics = () => {
                   <div className="wrapper-user-top">
                     <div className={'image-avatar'}>
                       <img
-                        src={user.image}
+                        src={test(user)}
                         alt="avatar"
                         className="custom-avt"
                       />
@@ -246,8 +242,7 @@ const Statistics = () => {
                 </div>
               ))}
             {Array.from({
-              length:
-                3 - (listLate?.length ?? 3),
+              length: 3 - (listLate?.length ?? 3),
             }).map((user, index) => (
               <div className="medal" key={index}>
                 <div className="rank-number">{index + 1 + listLate.length}</div>
@@ -273,7 +268,7 @@ const Statistics = () => {
                 <div className="name-user">Unknown Person</div>
               </div>
             ))}
-          </div>
+          </div> */}
           <div className="table-statistical">
             {listLate
               ?.filter((i, index) => index < 5)

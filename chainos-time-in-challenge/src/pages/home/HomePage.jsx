@@ -1,6 +1,5 @@
 import Coutdown from 'components/coutdown/Coutdown';
 import React, { useEffect, useState } from 'react';
-import avatar from '../../assets/img/avatar.jpg';
 import medal_silver from '../../assets/img/medal_silver.png';
 import medal_gold from '../../assets/img/medal_gold.png';
 import medal_bronze from '../../assets/img/medal_bronze.png';
